@@ -1,6 +1,6 @@
 # Beoplay Remote for macOS
 
-![test image size](./screenshot_app_icon.png){:height="50%" width="50%"}
+![test image size](./screenshot_app_icon.png)
 
 This is an unofficial app to remote control network enabled [Bang & Olufsen](https://www.bang-olufsen.com/) loudspeakers from macOS.
 

@@ -40,7 +40,7 @@ class MainMenuController: NSObject {
             "hotkeys.enabled": true
         ])
 
-        menuBar.button?.title = UserDefaults.standard.string(forKey: "app.title")!
+        menuBar.button?.image = NSImage(named: "StatusBarIcon")
         menuBar.menu = statusMenu
 
         if UserDefaults.standard.bool(forKey: "tuneIn.enabled") {

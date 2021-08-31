@@ -95,6 +95,7 @@ public class SourcesMenuController {
                     item.representedObject = source.id
                     item.target = self
                     item.isEnabled = true
+//                    item.image = NSImage(named: "Source" + source.friendlyName)
                     item.state = source.id == self.lastKnownSourceId
                         ? NSControl.StateValue.on
                         : NSControl.StateValue.off

@@ -19,11 +19,17 @@ class MainMenuController: NSObject {
     @IBOutlet weak var sourcesMenuItem: NSMenuItem!
     @IBOutlet weak var tuneInMenuItem: NSMenuItem!
 
-    @IBOutlet weak var playMenuItem: NSMenuItem!
-    @IBOutlet weak var pauseMenuItem: NSMenuItem!
-    @IBOutlet weak var nextMenuItem: NSMenuItem!
-    @IBOutlet weak var backMenuItem: NSMenuItem!
-
+    @IBOutlet weak var playButton: NSButton!
+    @IBOutlet weak var pauseButton: NSButton!
+    @IBOutlet weak var nextButton: NSButtonCell!
+    @IBOutlet weak var backButton: NSButton!
+   
+    @IBOutlet weak var infoViewMenuItem: NSMenuItem!
+    @IBOutlet weak var infoView: NSView!
+    @IBOutlet weak var infoImage: InformationImageView!
+    @IBOutlet weak var infoLabel: NSTextField!
+    @IBOutlet weak var subInfoLabel: NSTextField!
+   
     private let menuBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let remoteControl = RemoteControl()
 
@@ -32,14 +38,14 @@ class MainMenuController: NSObject {
     private var hotkeysController: HotkeysController?
     private var sourcesMenuController: SourcesMenuController?
     private var tuneInMenuController: TuneInMenuController?
-
+   
     override func awakeFromNib() {
         UserDefaults.standard.register(defaults: [
             "app.title": "BeoplayRemote",
             "tuneIn.enabled": true,
             "hotkeys.enabled": true
         ])
-
+        
         menuBar.button?.image = NSImage(named: "StatusBarIcon")
         menuBar.menu = statusMenu
 
@@ -103,7 +109,13 @@ class MainMenuController: NSObject {
 
         NotificationCenter.default.addObserver(forName: Notification.Name.onSourceChange, object: nil, queue: nil) { (notification: Notification) -> Void in
             if let data = notification.userInfo?["data"] as? RemoteCore.Source {
-                DispatchQueue.main.async { self.sourcesMenuController?.onSourceChange(data) }
+                DispatchQueue.main.async {
+                    self.sourcesMenuController?.onSourceChange(data)
+                    self.subInfoLabel.stringValue = "Connected to"
+                    self.infoLabel.stringValue = data.friendlyName
+                    self.infoImage.image = NSImage(named: "Source" + data.friendlyName)
+                    data.type == "LINE IN" ? self.disableControls() : self.enableControls()
+                }   
             }
         }
 
@@ -115,36 +127,51 @@ class MainMenuController: NSObject {
 
         NotificationCenter.default.addObserver(forName: Notification.Name.onNowPlayingRadio, object: nil, queue: nil) { (notification: Notification) -> Void in
             if let data = notification.userInfo?["data"] as? RemoteCore.NowPlayingRadio {
-                DispatchQueue.main.async { self.tuneInMenuController?.onNowPlayingRadio(data) }
+                DispatchQueue.main.async {
+                    self.tuneInMenuController?.onNowPlayingRadio(data)
+                    self.infoLabel.stringValue = data.liveDescription
+                    self.subInfoLabel.stringValue = data.name
+                }
             }
         }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name.onNowPlayingStoredMusic, object: nil, queue: nil) { (notification: Notification) -> Void in
+            if let data = notification.userInfo?["data"] as?
+                RemoteCore.NowPlayingStoredMusic {
+                DispatchQueue.main.async {
+                    self.subInfoLabel.stringValue = data.name
+                    self.infoLabel.stringValue = data.artist
+                }
+            }
+        }
+        
+        
     }
 
     func onProgress(_ data: RemoteCore.Progress) {
         if data.state == RemoteCore.DeviceState.play {
-            self.playMenuItem.isHidden = true
-            self.pauseMenuItem.isHidden = false
+            self.playButton.isHidden = true
+            self.pauseButton.isHidden = false
         } else {
-            self.playMenuItem.isHidden = false
-            self.pauseMenuItem.isHidden = true
+            self.playButton.isHidden = false
+            self.pauseButton.isHidden = true
         }
     }
 
     func enableControls() {
-        playMenuItem.isEnabled = true
-        pauseMenuItem.isEnabled = true
-        nextMenuItem.isEnabled = true
-        backMenuItem.isEnabled = true
+        playButton.isEnabled = true
+        pauseButton.isEnabled = true
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        volumeLevelViewController?.enable()
     }
 
     func disableControls() {
-        playMenuItem.isEnabled = false
-        pauseMenuItem.isEnabled = false
-        nextMenuItem.isEnabled = false
-        backMenuItem.isEnabled = false
-
-        self.playMenuItem.isHidden = false
-        self.pauseMenuItem.isHidden = true
+        playButton.isEnabled = false
+        pauseButton.isEnabled = false
+        nextButton.isEnabled = false
+        backButton.isEnabled = false
+        volumeLevelViewController?.disable()
     }
 
     func open() {
@@ -170,35 +197,35 @@ class MainMenuController: NSObject {
             self.remoteControl.leave()
         }
     }
-
-    @IBAction func playClicked(_ sender: NSMenuItem) {
-        DispatchQueue.global(qos: .userInitiated).async {
+  
+    @IBAction func playClicked(_ sender: Any) {
+         DispatchQueue.global(qos: .userInitiated).async {
             NSLog("playClicked")
             self.remoteControl.play()
         }
     }
-
-    @IBAction func pauseClicked(_ sender: NSMenuItem) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            NSLog("pauseClicked")
-            self.remoteControl.pause()
+ 
+    @IBAction func pauseClicked(_ sender: Any) {
+         DispatchQueue.global(qos: .userInitiated).async {
+           NSLog("pauseClicked")
+           self.remoteControl.pause()
         }
     }
-
-    @IBAction func nextClicked(_ sender: NSMenuItem) {
+ 
+    @IBAction func nextClicked(_ sender: Any) {
         DispatchQueue.global(qos: .userInitiated).async {
             NSLog("nextClicked")
             self.remoteControl.next()
         }
     }
-
-    @IBAction func backClicked(_ sender: NSMenuItem) {
+    
+    @IBAction func backClicked(_ sender: Any) {
         DispatchQueue.global(qos: .userInitiated).async {
             NSLog("backClicked")
             self.remoteControl.back()
         }
     }
-
+    
     @IBAction func quitClicked(_ sender: NSMenuItem) {
         NSLog("quitClicked")
         NSApplication.shared.terminate(self)

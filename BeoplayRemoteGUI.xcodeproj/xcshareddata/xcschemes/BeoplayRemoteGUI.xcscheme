@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FA975DC526D7A742008A405F"
+               BuildableName = "BeoplayRemoteGUIUITests.xctest"
+               BlueprintName = "BeoplayRemoteGUIUITests"
+               ReferencedContainer = "container:BeoplayRemoteGUI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -66,15 +76,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A56912B22A49696006B4718"
-            BuildableName = "BeoplayRemoteGUI.app"
-            BlueprintName = "BeoplayRemoteGUI"
-            ReferencedContainer = "container:BeoplayRemoteGUI.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

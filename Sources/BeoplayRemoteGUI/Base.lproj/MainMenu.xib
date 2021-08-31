@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,13 +17,18 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="alx-iL-ssJ" userLabel="MainMenuController" customClass="MainMenuController" customModule="BeoplayRemoteGUI" customModuleProvider="target">
             <connections>
-                <outlet property="backMenuItem" destination="S5r-Ym-sNj" id="gcB-gO-2SN"/>
+                <outlet property="backButton" destination="qUC-E4-SPv" id="Y1S-AJ-HYf"/>
                 <outlet property="deviceSeparatorMenuItem" destination="GZI-74-Bbh" id="S1t-Jt-YHQ"/>
-                <outlet property="nextMenuItem" destination="KeU-58-sE1" id="PCX-Le-AbH"/>
-                <outlet property="pauseMenuItem" destination="VFe-4y-61o" id="dVM-xX-Ebx"/>
-                <outlet property="playMenuItem" destination="p6f-gd-ldN" id="XNO-Ws-tUC"/>
+                <outlet property="infoImage" destination="vnV-HO-j48" id="1VF-Ku-aEQ"/>
+                <outlet property="infoLabel" destination="g6Z-An-xRY" id="NHl-g1-PsU"/>
+                <outlet property="infoView" destination="XQH-5f-NBG" id="VMd-co-XVg"/>
+                <outlet property="infoViewMenuItem" destination="b5i-lx-6lC" id="Yc5-p0-gIZ"/>
+                <outlet property="nextButton" destination="C4W-aq-MM0" id="zzC-fz-siP"/>
+                <outlet property="pauseButton" destination="kDz-jS-eMR" id="PW0-c6-Vib"/>
+                <outlet property="playButton" destination="H93-eA-nod" id="Uby-Y5-XjQ"/>
                 <outlet property="sourcesMenuItem" destination="kgn-98-8ke" id="PId-kJ-w1k"/>
                 <outlet property="statusMenu" destination="1Xh-Lf-Elu" id="kDo-2h-EvE"/>
+                <outlet property="subInfoLabel" destination="GLE-bB-Yyt" id="IND-kg-kRf"/>
                 <outlet property="tuneInMenuItem" destination="TnM-U3-Th3" id="joN-7L-FgG"/>
                 <outlet property="volumeLevelMenuItem" destination="vNB-tl-eiA" id="dQg-lc-9Vc"/>
                 <outlet property="volumeLevelSlider" destination="lMI-Wr-2xK" id="AOd-CA-EV2"/>
@@ -32,12 +37,23 @@
         </customObject>
         <menu autoenablesItems="NO" id="1Xh-Lf-Elu">
             <items>
-                <menuItem title="Volume: " enabled="NO" id="OHD-zl-J7n">
+                <menuItem title="PlayerControl" id="UKA-Ti-0Hs">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <outlet property="view" destination="uOf-TD-F5x" id="VjZ-Pb-OAJ"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="VolumeSlider" id="vNB-tl-eiA">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem title="Information" allowsKeyEquivalentWhenHidden="YES" id="b5i-lx-6lC" userLabel="Information">
+                    <attributedString key="attributedTitle"/>
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <outlet property="view" destination="XQH-5f-NBG" id="vR0-28-LHz"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="xH5-41-cNT"/>
                 <menuItem title="Device:" enabled="NO" id="jiP-To-6zk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
@@ -65,31 +81,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="TuneIn Radio" id="5LN-aQ-QEd"/>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="xH5-41-cNT"/>
-                <menuItem title="Play" enabled="NO" id="p6f-gd-ldN">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="playClicked:" target="alx-iL-ssJ" id="AG6-ad-V9Z"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Pause" enabled="NO" id="VFe-4y-61o">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="pauseClicked:" target="alx-iL-ssJ" id="REm-Bw-lOL"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Next" enabled="NO" id="KeU-58-sE1">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="nextClicked:" target="alx-iL-ssJ" id="Eqi-35-UEy"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Back" enabled="NO" id="S5r-Ym-sNj">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="backClicked:" target="alx-iL-ssJ" id="6wR-eE-aRi"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="qEB-Ww-KcO"/>
                 <menuItem title="Quit" id="5Jz-9g-qZA" userLabel="Quit">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -98,22 +89,135 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-243" y="-355"/>
+            <point key="canvasLocation" x="-226" y="-353"/>
         </menu>
         <customView id="Qyl-Dg-uny" customClass="VolumeLevelView" customModule="BeoplayRemoteGUI" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="235" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-Wr-2xK" customClass="ScrollableSlider" customModule="BeoplayRemoteGUI" customModuleProvider="target">
-                    <rect key="frame" x="19" y="0" width="174" height="30"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="OUU-1o-3ef"/>
+                    <rect key="frame" x="18" y="6" width="199" height="28"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="OUU-1o-3ef"/>
                     <connections>
                         <action selector="sliderMoved:" target="alx-iL-ssJ" id="obx-1b-yi3"/>
                     </connections>
                 </slider>
             </subviews>
-            <point key="canvasLocation" x="-199" y="-191"/>
+            <point key="canvasLocation" x="-497" y="-315"/>
+        </customView>
+        <customView id="XQH-5f-NBG" userLabel="Information View">
+            <rect key="frame" x="0.0" y="0.0" width="235" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" alphaValue="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="vnV-HO-j48" customClass="InformationImageView" customModule="BeoplayRemoteGUI" customModuleProvider="target">
+                    <rect key="frame" x="24" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="6ak-nq-fO4"/>
+                    </constraints>
+                    <backgroundFilters>
+                        <ciFilter name="CIGaussianBlur">
+                            <configuration>
+                                <null key="inputImage"/>
+                                <real key="inputRadius" value="10"/>
+                            </configuration>
+                        </ciFilter>
+                    </backgroundFilters>
+                    <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" image="SourceIcon" id="kRJ-Mj-MEd"/>
+                    <color key="contentTintColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <textField verticalHuggingPriority="750" allowsExpansionToolTips="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-An-xRY">
+                    <rect key="frame" x="71" y="13" width="146" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="oFh-fZ-2l1">
+                        <font key="font" metaFont="menu" size="14"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-bB-Yyt">
+                    <rect key="frame" x="71" y="32" width="146" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Sub Label" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="hmd-XW-2Eu">
+                        <font key="font" metaFont="menu" size="14"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="GLE-bB-Yyt" secondAttribute="trailing" constant="20" symbolic="YES" id="5UP-cb-oYj"/>
+                <constraint firstItem="GLE-bB-Yyt" firstAttribute="leading" secondItem="vnV-HO-j48" secondAttribute="trailing" constant="9" id="6GY-Hg-UOz"/>
+                <constraint firstItem="vnV-HO-j48" firstAttribute="leading" secondItem="XQH-5f-NBG" secondAttribute="leading" constant="24" id="Bru-cw-o6s"/>
+                <constraint firstItem="GLE-bB-Yyt" firstAttribute="trailing" secondItem="g6Z-An-xRY" secondAttribute="trailing" id="FTQ-fb-Euc"/>
+                <constraint firstItem="g6Z-An-xRY" firstAttribute="top" secondItem="GLE-bB-Yyt" secondAttribute="bottom" constant="2" id="Fr4-H6-X8Q"/>
+                <constraint firstItem="vnV-HO-j48" firstAttribute="top" secondItem="XQH-5f-NBG" secondAttribute="top" constant="6" id="XjK-RV-ftW"/>
+                <constraint firstItem="vnV-HO-j48" firstAttribute="bottom" secondItem="g6Z-An-xRY" secondAttribute="bottom" constant="3" id="i7v-i8-epi"/>
+                <constraint firstItem="GLE-bB-Yyt" firstAttribute="leading" secondItem="g6Z-An-xRY" secondAttribute="leading" id="iuw-eO-Uts"/>
+                <constraint firstItem="GLE-bB-Yyt" firstAttribute="top" secondItem="XQH-5f-NBG" secondAttribute="top" constant="7" id="yvq-0P-uKc"/>
+            </constraints>
+            <point key="canvasLocation" x="-498" y="-216"/>
+        </customView>
+        <customView wantsLayer="YES" id="uOf-TD-F5x" userLabel="Player Control View">
+            <rect key="frame" x="0.0" y="0.0" width="235" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button mirrorLayoutDirectionWhenInternationalizing="always" id="H93-eA-nod" userLabel="Play Button">
+                    <rect key="frame" x="88" y="0.0" width="57" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlayerPlay" imagePosition="overlaps" alignment="center" scrollable="YES" lineBreakMode="clipping" inset="2" id="I0t-th-zZM">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="playClicked:" target="alx-iL-ssJ" id="d6D-xw-DBP"/>
+                    </connections>
+                </button>
+                <button hidden="YES" mirrorLayoutDirectionWhenInternationalizing="always" id="kDz-jS-eMR" userLabel="Pause Button">
+                    <rect key="frame" x="88" y="0.0" width="57" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlayerPause" imagePosition="overlaps" alignment="center" scrollable="YES" lineBreakMode="clipping" inset="2" id="X6b-Mr-uNe">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pauseClicked:" target="alx-iL-ssJ" id="v7X-SK-zVx"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUC-E4-SPv" userLabel="Prev Button">
+                    <rect key="frame" x="42" y="0.0" width="58" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlayerStepBackward" imagePosition="only" alignment="center" inset="2" id="yUr-Yn-ANb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <action selector="backClicked:" target="alx-iL-ssJ" id="qTc-8n-3E3"/>
+                        </connections>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMV-h0-gfV" userLabel="Next Button">
+                    <rect key="frame" x="134" y="0.0" width="58" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlayerStepForward" imagePosition="only" alignment="center" inset="2" id="C4W-aq-MM0">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <action selector="nextClicked:" target="alx-iL-ssJ" id="gdK-7e-mqC"/>
+                        </connections>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="-498" y="-413"/>
         </customView>
     </objects>
+    <resources>
+        <image name="PlayerPause" width="12" height="12"/>
+        <image name="PlayerPlay" width="12" height="14"/>
+        <image name="PlayerStepBackward" width="9" height="12"/>
+        <image name="PlayerStepForward" width="9" height="12"/>
+        <image name="SourceIcon" width="17" height="17"/>
+    </resources>
 </document>

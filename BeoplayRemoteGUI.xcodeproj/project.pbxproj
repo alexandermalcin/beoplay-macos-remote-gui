@@ -21,7 +21,19 @@
 		5A64899723A57C01001679DA /* BeoplayRemoteCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A64899623A57C01001679DA /* BeoplayRemoteCore */; };
 		5A84AF0A2389BB7D00DD8FD0 /* DeviceBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AF092389BB7D00DD8FD0 /* DeviceBrowserDelegate.swift */; };
 		5ADB667E23B3AF6700612D0F /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 5ADB667D23B3AF6700612D0F /* HotKey */; };
+		FA1AE6D126D8198E003F98B6 /* InformationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AE6D026D8198E003F98B6 /* InformationImageView.swift */; };
+		FA975DC926D7A742008A405F /* BeoplayRemoteGUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975DC826D7A742008A405F /* BeoplayRemoteGUIUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA975DCB26D7A742008A405F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A56912B22A49696006B4718;
+			remoteInfo = BeoplayRemoteGUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5AFBA56922B2F41700A3891A /* Embed Frameworks */ = {
@@ -54,6 +66,11 @@
 		5A84AF092389BB7D00DD8FD0 /* DeviceBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceBrowserDelegate.swift; sourceTree = "<group>"; };
 		5AAE214F237C5F940047B567 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5AFE24342390191F007500BC /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		FA15BB9226D4E8AE00C24C0C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		FA1AE6D026D8198E003F98B6 /* InformationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationImageView.swift; sourceTree = "<group>"; };
+		FA975DC626D7A742008A405F /* BeoplayRemoteGUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeoplayRemoteGUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA975DC826D7A742008A405F /* BeoplayRemoteGUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeoplayRemoteGUIUITests.swift; sourceTree = "<group>"; };
+		FA975DCA26D7A742008A405F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +80,13 @@
 			files = (
 				5ADB667E23B3AF6700612D0F /* HotKey in Frameworks */,
 				5A64899723A57C01001679DA /* BeoplayRemoteCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA975DC326D7A742008A405F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +106,7 @@
 				5A513B9822A4E13D00BE2687 /* MainMenu.xib */,
 				5A513B9722A4E13D00BE2687 /* MainMenuController.swift */,
 				5A1E011C22B447AB00AEC342 /* ScrollableSlider.swift */,
+				FA1AE6D026D8198E003F98B6 /* InformationImageView.swift */,
 				5A276F092393E96700FF1F7A /* SourcesMenuController.swift */,
 				5A276F072393E65500FF1F7A /* TuneInMenuController.swift */,
 				5A513B9A22A4E13D00BE2687 /* VolumeLevelView.swift */,
@@ -91,10 +116,20 @@
 			path = Sources/BeoplayRemoteGUI;
 			sourceTree = "<group>";
 		};
+		FA975DC726D7A742008A405F /* BeoplayRemoteGUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA975DC826D7A742008A405F /* BeoplayRemoteGUIUITests.swift */,
+				FA975DCA26D7A742008A405F /* Info.plist */,
+			);
+			path = BeoplayRemoteGUIUITests;
+			sourceTree = "<group>";
+		};
 		OBJ_23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5A56912C22A49696006B4718 /* BeoplayRemoteGUI.app */,
+				FA975DC626D7A742008A405F /* BeoplayRemoteGUIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -103,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_7 /* Sources */,
+				FA975DC726D7A742008A405F /* BeoplayRemoteGUIUITests */,
 				OBJ_23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +176,24 @@
 			productReference = 5A56912C22A49696006B4718 /* BeoplayRemoteGUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA975DC526D7A742008A405F /* BeoplayRemoteGUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA975DCF26D7A742008A405F /* Build configuration list for PBXNativeTarget "BeoplayRemoteGUIUITests" */;
+			buildPhases = (
+				FA975DC226D7A742008A405F /* Sources */,
+				FA975DC326D7A742008A405F /* Frameworks */,
+				FA975DC426D7A742008A405F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA975DCC26D7A742008A405F /* PBXTargetDependency */,
+			);
+			name = BeoplayRemoteGUIUITests;
+			productName = BeoplayRemoteGUIUITests;
+			productReference = FA975DC626D7A742008A405F /* BeoplayRemoteGUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,12 +201,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 9999;
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					5A56912B22A49696006B4718 = {
 						CreatedOnToolsVersion = 10.2.1;
 						ProvisioningStyle = Automatic;
+					};
+					FA975DC526D7A742008A405F = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 5A56912B22A49696006B4718;
 					};
 				};
 			};
@@ -164,6 +222,7 @@
 				en,
 				Base,
 				da,
+				de,
 			);
 			mainGroup = OBJ_5;
 			packageReferences = (
@@ -175,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				5A56912B22A49696006B4718 /* BeoplayRemoteGUI */,
+				FA975DC526D7A742008A405F /* BeoplayRemoteGUIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +246,13 @@
 			files = (
 				5A513B9E22A4E13D00BE2687 /* Assets.xcassets in Resources */,
 				5A513BA022A4E13D00BE2687 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA975DC426D7A742008A405F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +269,7 @@
 				5A276F0A2393E96700FF1F7A /* SourcesMenuController.swift in Sources */,
 				5A276F082393E65500FF1F7A /* TuneInMenuController.swift in Sources */,
 				5A513B9F22A4E13D00BE2687 /* MainMenuController.swift in Sources */,
+				FA1AE6D126D8198E003F98B6 /* InformationImageView.swift in Sources */,
 				5A84AF0A2389BB7D00DD8FD0 /* DeviceBrowserDelegate.swift in Sources */,
 				5A513BA122A4E13D00BE2687 /* VolumeLevelView.swift in Sources */,
 				5A1E011D22B447AB00AEC342 /* ScrollableSlider.swift in Sources */,
@@ -209,7 +277,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA975DC226D7A742008A405F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA975DC926D7A742008A405F /* BeoplayRemoteGUIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA975DCC26D7A742008A405F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A56912B22A49696006B4718 /* BeoplayRemoteGUI */;
+			targetProxy = FA975DCB26D7A742008A405F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5A513B9822A4E13D00BE2687 /* MainMenu.xib */ = {
@@ -218,6 +302,7 @@
 				5A513B9922A4E13D00BE2687 /* Base */,
 				5AAE214F237C5F940047B567 /* en */,
 				5AFE24342390191F007500BC /* da */,
+				FA15BB9226D4E8AE00C24C0C /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -359,6 +444,86 @@
 			};
 			name = Release;
 		};
+		FA975DCD26D7A742008A405F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U3DW3F9HFZ;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = BeoplayRemoteGUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = am.BeoplayRemoteGUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BeoplayRemoteGUI;
+			};
+			name = Debug;
+		};
+		FA975DCE26D7A742008A405F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = U3DW3F9HFZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = BeoplayRemoteGUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = am.BeoplayRemoteGUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BeoplayRemoteGUI;
+			};
+			name = Release;
+		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -474,6 +639,15 @@
 			buildConfigurations = (
 				5A56913822A49697006B4718 /* Debug */,
 				5A56913922A49697006B4718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA975DCF26D7A742008A405F /* Build configuration list for PBXNativeTarget "BeoplayRemoteGUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA975DCD26D7A742008A405F /* Debug */,
+				FA975DCE26D7A742008A405F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

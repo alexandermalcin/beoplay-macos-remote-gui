@@ -1,0 +1,33 @@
+
+/* Class = "NSMenuItem"; title = "Quit"; ObjectID = "5Jz-9g-qZA"; */
+"5Jz-9g-qZA.title" = "Beenden";
+
+/* Class = "NSMenu"; title = "TuneIn Radio"; ObjectID = "5LN-aQ-QEd"; */
+"5LN-aQ-QEd.title" = "TuneIn Radio";
+
+/* Class = "NSMenuItem"; title = "deviceSeparator"; ObjectID = "GZI-74-Bbh"; */
+"GZI-74-Bbh.title" = "deviceSeparator";
+
+/* Class = "NSMenuItem"; title = "TuneIn Radio"; ObjectID = "TnM-U3-Th3"; */
+"TnM-U3-Th3.title" = "TuneIn Radio";
+
+/* Class = "NSMenuItem"; title = "PlayerControl"; ObjectID = "UKA-Ti-0Hs"; */
+"UKA-Ti-0Hs.title" = "Steuerung";
+
+/* Class = "NSMenuItem"; title = "Leave Multiroom"; ObjectID = "YbL-n3-TK6"; */
+"YbL-n3-TK6.title" = "Multiroom verlassen";
+
+/* Class = "NSMenu"; title = "Sources"; ObjectID = "jdX-PL-kHj"; */
+"jdX-PL-kHj.title" = "Quellen";
+
+/* Class = "NSMenuItem"; title = "Device:"; ObjectID = "jiP-To-6zk"; */
+"jiP-To-6zk.title" = "Ausgabegerät:";
+
+/* Class = "NSMenuItem"; title = "Sources"; ObjectID = "kgn-98-8ke"; */
+"kgn-98-8ke.title" = "Quellen";
+
+/* Class = "NSMenuItem"; title = "VolumeSlider"; ObjectID = "vNB-tl-eiA"; */
+"vNB-tl-eiA.title" = "Lautstärke";
+
+/* Class = "NSMenuItem"; title = "Join Multiroom"; ObjectID = "zaJ-t8-6dj"; */
+"zaJ-t8-6dj.title" = "Multiroom beitreten";

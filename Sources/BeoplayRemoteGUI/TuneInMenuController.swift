@@ -18,8 +18,8 @@ public class TuneInMenuController {
     }
 
     public func onNowPlayingRadio(_ data: RemoteCore.NowPlayingRadio) {
-        NSLog("now playing radio, tuneIn station id: \(data.stationId), station name: \(data.name)")
-
+        NSLog("now playing radio, tuneIn station id: \(data.stationId), station name: \(data.name), liveDescription: \(data.liveDescription)")
+        
         for item in self.tuneInMenuItem.submenu!.items {
             item.state = item.representedObject as? String == data.stationId
                 ? NSControl.StateValue.on

@@ -111,10 +111,12 @@ class MainMenuController: NSObject {
             if let data = notification.userInfo?["data"] as? RemoteCore.Source {
                 DispatchQueue.main.async {
                     self.sourcesMenuController?.onSourceChange(data)
-                    self.subInfoLabel.stringValue = "Connected to"
                     if data.friendlyName.isEmpty {
-                        self.infoImage.image = NSImage(named: "StatusBarIcon")
+                         self.subInfoLabel.stringValue = "-"
+                         self.infoLabel.stringValue = "-"
+                         self.infoImage.image = NSImage(named: "StatusBarIcon")
                     } else {
+                         self.subInfoLabel.stringValue = "Connected to"
                          self.infoLabel.stringValue = data.friendlyName
                          self.infoImage.image = NSImage(named: "Source" + data.friendlyName)
                     }

@@ -112,8 +112,12 @@ class MainMenuController: NSObject {
                 DispatchQueue.main.async {
                     self.sourcesMenuController?.onSourceChange(data)
                     self.subInfoLabel.stringValue = "Connected to"
-                    self.infoLabel.stringValue = data.friendlyName
-                    self.infoImage.image = NSImage(named: "Source" + data.friendlyName)
+                    if data.friendlyName.isEmpty {
+                        self.infoImage.image = NSImage(named: "StatusBarIcon")
+                    } else {
+                         self.infoLabel.stringValue = data.friendlyName
+                         self.infoImage.image = NSImage(named: "Source" + data.friendlyName)
+                    }
                     data.type == "LINE IN" ? self.disableControls() : self.enableControls()
                 }   
             }

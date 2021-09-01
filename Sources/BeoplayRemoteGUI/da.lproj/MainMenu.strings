@@ -8,20 +8,11 @@
 /* Class = "NSMenuItem"; title = "deviceSeparator"; ObjectID = "GZI-74-Bbh"; */
 "GZI-74-Bbh.title" = "deviceSeparator";
 
-/* Class = "NSMenuItem"; title = "Forward"; ObjectID = "KeU-58-sE1"; */
-"KeU-58-sE1.title" = "Next";
-
 /* Class = "NSMenuItem"; title = "Volume: "; ObjectID = "OHD-zl-J7n"; */
-"OHD-zl-J7n.title" = "Volume: ";
-
-/* Class = "NSMenuItem"; title = "Backward"; ObjectID = "S5r-Ym-sNj"; */
-"S5r-Ym-sNj.title" = "Back";
+"OHD-zl-J7n.title" = "Volume:";
 
 /* Class = "NSMenuItem"; title = "TuneIn Radio"; ObjectID = "TnM-U3-Th3"; */
 "TnM-U3-Th3.title" = "TuneIn Radio";
-
-/* Class = "NSMenuItem"; title = "Pause"; ObjectID = "VFe-4y-61o"; */
-"VFe-4y-61o.title" = "Pause";
 
 /* Class = "NSMenuItem"; title = "Leave Multiroom"; ObjectID = "YbL-n3-TK6"; */
 "YbL-n3-TK6.title" = "Leave Multiroom";
@@ -34,9 +25,6 @@
 
 /* Class = "NSMenuItem"; title = "Sources"; ObjectID = "kgn-98-8ke"; */
 "kgn-98-8ke.title" = "Sources";
-
-/* Class = "NSMenuItem"; title = "Play"; ObjectID = "p6f-gd-ldN"; */
-"p6f-gd-ldN.title" = "Play";
 
 /* Class = "NSMenuItem"; title = "VolumeSlider"; ObjectID = "vNB-tl-eiA"; */
 "vNB-tl-eiA.title" = "VolumeSlider";

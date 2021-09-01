@@ -21,6 +21,7 @@
                 <outlet property="deviceSeparatorMenuItem" destination="GZI-74-Bbh" id="S1t-Jt-YHQ"/>
                 <outlet property="infoImage" destination="vnV-HO-j48" id="1VF-Ku-aEQ"/>
                 <outlet property="infoLabel" destination="g6Z-An-xRY" id="NHl-g1-PsU"/>
+                <outlet property="infoSubLabel" destination="GLE-bB-Yyt" id="IND-kg-kRf"/>
                 <outlet property="infoView" destination="XQH-5f-NBG" id="VMd-co-XVg"/>
                 <outlet property="infoViewMenuItem" destination="b5i-lx-6lC" id="Yc5-p0-gIZ"/>
                 <outlet property="nextButton" destination="C4W-aq-MM0" id="zzC-fz-siP"/>
@@ -28,7 +29,6 @@
                 <outlet property="playButton" destination="H93-eA-nod" id="Uby-Y5-XjQ"/>
                 <outlet property="sourcesMenuItem" destination="kgn-98-8ke" id="PId-kJ-w1k"/>
                 <outlet property="statusMenu" destination="1Xh-Lf-Elu" id="kDo-2h-EvE"/>
-                <outlet property="subInfoLabel" destination="GLE-bB-Yyt" id="IND-kg-kRf"/>
                 <outlet property="tuneInMenuItem" destination="TnM-U3-Th3" id="joN-7L-FgG"/>
                 <outlet property="volumeLevelMenuItem" destination="vNB-tl-eiA" id="dQg-lc-9Vc"/>
                 <outlet property="volumeLevelSlider" destination="lMI-Wr-2xK" id="AOd-CA-EV2"/>
@@ -133,7 +133,7 @@
                 </imageView>
                 <textField verticalHuggingPriority="750" allowsExpansionToolTips="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-An-xRY">
                     <rect key="frame" x="71" y="13" width="146" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Label" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="oFh-fZ-2l1">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="infoLabel" placeholderString="-" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="oFh-fZ-2l1">
                         <font key="font" metaFont="menu" size="14"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -141,7 +141,7 @@
                 </textField>
                 <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-bB-Yyt">
                     <rect key="frame" x="71" y="32" width="146" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="SubLabel" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="hmd-XW-2Eu">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="infoSubLabel" placeholderString="Source:" allowsEditingTextAttributes="YES" usesSingleLineMode="YES" id="hmd-XW-2Eu">
                         <font key="font" metaFont="menu" size="14"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

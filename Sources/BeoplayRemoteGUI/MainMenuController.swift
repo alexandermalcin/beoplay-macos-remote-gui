@@ -28,7 +28,7 @@ class MainMenuController: NSObject {
     @IBOutlet weak var infoView: NSView!
     @IBOutlet weak var infoImage: InformationImageView!
     @IBOutlet weak var infoLabel: NSTextField!
-    @IBOutlet weak var subInfoLabel: NSTextField!
+    @IBOutlet weak var infoSubLabel: NSTextField!
    
     private let menuBar = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private let remoteControl = RemoteControl()
@@ -111,20 +111,14 @@ class MainMenuController: NSObject {
             if let data = notification.userInfo?["data"] as? RemoteCore.Source {
                 DispatchQueue.main.async {
                     self.sourcesMenuController?.onSourceChange(data)
-                    if data.friendlyName.isEmpty {
-                         self.subInfoLabel.stringValue = "-"
-                         self.infoLabel.stringValue = "-"
-                         self.infoImage.image = NSImage(named: "StatusBarIcon")
-                    } else {
-                         self.subInfoLabel.stringValue = "Connected to"
-                         self.infoLabel.stringValue = data.friendlyName
-                         self.infoImage.image = NSImage(named: "Source" + data.friendlyName)
-                    }
+                    self.infoSubLabel.stringValue = "Source:"
+                    self.infoLabel.stringValue = data.friendlyName
+                    self.infoImage.image = data.friendlyName.isEmpty ? NSImage(named: "SourceIcon") : NSImage(named: "Source" + data.friendlyName)
                     data.type == "LINE IN" ? self.disableControls() : self.enableControls()
                 }   
             }
         }
-
+        
         NotificationCenter.default.addObserver(forName: Notification.Name.onConnectionChange, object: nil, queue: nil) { (notification: Notification) -> Void in
             if let data = notification.userInfo?["data"] as? NotificationBridge.DataConnectionNotification {
                 DispatchQueue.main.async { self.deviceMenuController?.onConnectionChange(data) }
@@ -136,7 +130,7 @@ class MainMenuController: NSObject {
                 DispatchQueue.main.async {
                     self.tuneInMenuController?.onNowPlayingRadio(data)
                     self.infoLabel.stringValue = data.liveDescription
-                    self.subInfoLabel.stringValue = data.name
+                    self.infoSubLabel.stringValue = data.name
                 }
             }
         }
@@ -145,13 +139,12 @@ class MainMenuController: NSObject {
             if let data = notification.userInfo?["data"] as?
                 RemoteCore.NowPlayingStoredMusic {
                 DispatchQueue.main.async {
-                    self.subInfoLabel.stringValue = data.name
+                    self.infoSubLabel.stringValue = data.name
                     self.infoLabel.stringValue = data.artist
                 }
             }
         }
-        
-        
+     
     }
 
     func onProgress(_ data: RemoteCore.Progress) {

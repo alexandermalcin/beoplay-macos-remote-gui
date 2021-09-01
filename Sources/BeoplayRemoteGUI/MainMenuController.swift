@@ -111,7 +111,7 @@ class MainMenuController: NSObject {
             if let data = notification.userInfo?["data"] as? RemoteCore.Source {
                 DispatchQueue.main.async {
                     self.sourcesMenuController?.onSourceChange(data)
-                    self.infoSubLabel.stringValue = "Source:"
+                    self.infoSubLabel.stringValue = ""
                     self.infoLabel.stringValue = data.friendlyName
                     self.infoImage.image = data.friendlyName.isEmpty ? NSImage(named: "SourceIcon") : NSImage(named: "Source" + data.friendlyName)
                     data.type == "LINE IN" ? self.disableControls() : self.enableControls()
